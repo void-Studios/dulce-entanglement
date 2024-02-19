@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://c244siwp4n4u3"]
+
+[ext_resource type="Script" path="res://godeye.gd" id="1_db0cl"]
+
+[node name="GodEye" type="Node"]
+script = ExtResource("1_db0cl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = -103.5
+offset_right = 161.0
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="1" type="Button" parent="CanvasLayer/Control/MarginContainer/TabContainer"]
+layout_mode = 2
+text = "Apachurra to begin"
+
+[node name="2" type="Button" parent="CanvasLayer/Control/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+text = "whois"
+
+[node name="3" type="Button" parent="CanvasLayer/Control/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+text = "cls()"
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TabContainer/1" to="." method="_on__pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TabContainer/1" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TabContainer/2" to="." method="_on__pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TabContainer/2" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/TabContainer/3" to="." method="_on_button3_pressed"]
